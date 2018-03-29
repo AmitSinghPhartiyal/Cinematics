@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/Users/amit.singh/Desktop/reactNative/Cinematics/android/app/build/intermediates/res/merged/release/drawable-mdpi-v4/images_apple.jpeg",
+        "source": "/Users/amit.singh/Desktop/reactNative/Cinematics/android/app/src/main/res/drawable-mdpi/images_apple.jpeg"
+    },
+    {
+        "merged": "/Users/amit.singh/Desktop/reactNative/Cinematics/android/app/build/intermediates/res/merged/release/drawable-mdpi-v4/images_pop.jpeg",
+        "source": "/Users/amit.singh/Desktop/reactNative/Cinematics/android/app/src/main/res/drawable-mdpi/images_pop.jpeg"
+    },
+    {
+        "merged": "/Users/amit.singh/Desktop/reactNative/Cinematics/android/app/build/intermediates/res/merged/release/drawable-mdpi-v4/src_images_apple.jpeg",
+        "source": "/Users/amit.singh/Desktop/reactNative/Cinematics/android/app/src/main/res/drawable-mdpi/src_images_apple.jpeg"
+    },
+    {
+        "merged": "/Users/amit.singh/Desktop/reactNative/Cinematics/android/app/build/intermediates/res/merged/release/drawable-mdpi-v4/src_images_pop.jpeg",
+        "source": "/Users/amit.singh/Desktop/reactNative/Cinematics/android/app/src/main/res/drawable-mdpi/src_images_pop.jpeg"
+    }
+]
