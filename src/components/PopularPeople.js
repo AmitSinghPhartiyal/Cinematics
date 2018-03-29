@@ -49,53 +49,53 @@ const imgPath = "https://image.tmdb.org/t/p/w500/"
 							<TouchableOpacity onPress = {() => { Actions.drawerOpen() }}>
 								<Icon name = "bars" style = {{ color:'#fff',fontSize:20, }}/>
 							</TouchableOpacity>
-						</View>
-						<View style = {{ flex:0.6,justifyContent:'center' }}>
-							<Text style = {{ color:'#fff',fontSize:20, }}>Popular People</Text>
-						</View>
-						<View style = {{ flex:0.2,alignItems:'center',justifyContent:'center' }}>
-							<TouchableOpacity onPress = { () => Actions.Search() }>
-								<Icon name="search" style = {{ color:'#fff',fontSize:20, }}/>
-							</TouchableOpacity>
-						</View>
+					</View>
+					<View style = {{ flex:0.6,justifyContent:'center' }}>
+						<Text style = {{ color:'#fff',fontSize:20, }}>Popular People</Text>
+					</View>
+					<View style = {{ flex:0.2,alignItems:'center',justifyContent:'center' }}>
+						<TouchableOpacity onPress = { () => Actions.Search() }>
+							<Icon name="search" style = {{ color:'#fff',fontSize:20, }}/>
+						</TouchableOpacity>
+					</View>
 	    		</View>
 	    		<View style ={{ flex:0.9,backgroundColor:'#fff'}}>
-						<FlatList
-							refresh = {true}
-		          data={ this.props.peoplelist}
-		          numColumns={1}
-		          ItemSeparatorComponent = { this.FlatListItemSeparator }
-		          keyExtractor={item => item.id.toString()}
-		          renderItem={({item,index}) =>{
-								if(item.profile_path){
-			        		return(
-			           		<TouchableOpacity style = {{flex:1,padding:20,flexDirection:'row',borderBottomWidth:0.5,borderBottomColor:'#B5BEC6'}} onPress = {() => { Actions.PeopleDescription({peopleProp:item})}}>
-			           			<View style = {{flex:2,flexDirection:'column',}} >
-			                  <Image 	source = {{uri :imgPath + item.profile_path}} 
-			                  				style = {{ borderRadius:100,width:100,height:100}} 
-			                   				indicator={ActivityIndicator}
-			                   				borderRadius = {100}/>
-			                </View>
-			                <View style = {{flex:5,flexDirection:'column',justifyContent:'center'}} >
-			                  <Text  style = {{color:"#000",fontSize:15,fontWeight:'bold'}}> { item.name}</Text>
-			                </View>    
-			              </TouchableOpacity>
-			        		)
-			  				}else{
-			  					return(
-			           		<TouchableOpacity style = {{flex:1,padding:20,flexDirection:'row',borderBottomWidth:0.5,borderBottomColor:'#B5BEC6'}}>
-			           			<View style = {{flex:3,flexDirection:'column',justifyContent:'center',alignItems:'center',}} >
-			                	<Icon name="image" style ={{fontSize:80}}/>
-			                </View>
-			                <View style = {{flex:4,flexDirection:'column',justifyContent:'center'}} >
-			                  <Text  style = {{color:"#000",fontSize:15,fontWeight:'bold'}}> { item.name}</Text>
-			                </View>    
-			              </TouchableOpacity>
-			        		)
-			  				}
-		  				}}
-			      />		
-					</View>
+					<FlatList
+						refresh = {true}
+						data={ this.props.peoplelist}
+						numColumns={1}
+						ItemSeparatorComponent = { this.FlatListItemSeparator }
+						keyExtractor={item => item.id.toString()}
+						renderItem={({item,index}) =>{
+						if(item.profile_path){
+						return(
+							<TouchableOpacity style = {{flex:1,padding:20,flexDirection:'row',borderBottomWidth:0.5,borderBottomColor:'#B5BEC6'}} onPress = {() => { Actions.PeopleDescription({peopleProp:item})}}>
+								<View style = {{flex:2,flexDirection:'column',}} >
+								<Image 	source = {{uri :imgPath + item.profile_path}} 
+										style = {{ borderRadius:100,width:100,height:100}} 
+										indicator={ActivityIndicator}
+										borderRadius = {100}/>
+								</View>
+								<View style = {{flex:5,flexDirection:'column',justifyContent:'center'}} >
+									<Text  style = {{color:"#000",fontSize:15,fontWeight:'bold'}}> { item.name}</Text>
+								</View>    
+							</TouchableOpacity>
+						)
+						}else{
+							return(
+								<TouchableOpacity style = {{flex:1,padding:20,flexDirection:'row',borderBottomWidth:0.5,borderBottomColor:'#B5BEC6'}}>
+									<View style = {{flex:3,flexDirection:'column',justifyContent:'center',alignItems:'center',}} >
+										<Icon name="image" style ={{fontSize:80}}/>
+									</View>
+									<View style = {{flex:4,flexDirection:'column',justifyContent:'center'}} >
+										<Text  style = {{color:"#000",fontSize:15,fontWeight:'bold'}}> { item.name}</Text>
+									</View>    
+								</TouchableOpacity>
+							)
+						}
+					}}
+					/>		
+				</View>
 	    	</View>
 	    )
 	  }
