@@ -16,11 +16,11 @@ export default class RouterComponent extends Component{
 			<Router>
 				<Stack key="root">
 					<Drawer
-              hideNavBar
-              key="drawer"
-              contentComponent={SidebarComponent}
-              drawerWidth={300}
-              title="Cinematics"
+            hideNavBar
+            key="drawer"
+            contentComponent={SidebarComponent}
+            drawerWidth={300}
+            title="Cinematics"
 					>
 						<Scene 
 							key = "Home" 
@@ -33,8 +33,7 @@ export default class RouterComponent extends Component{
 						key = "Tvshows" 
 						component={ Tvshows } 
 						title="Tvshows" 
-						hideNavBar = { true }
-							
+						hideNavBar = { true }					
 					/>
 					<Scene 
 						key = "Discover" 
