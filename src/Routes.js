@@ -1,26 +1,26 @@
-import React, { Component } from 'react'
+import  React, { Component } from 'react'
 import Home from './components/Home'
 import Search from './components/Search'
 import Tvshows from './components/Tvshows'
 import Discover from './components/Discover'
 import PopularPeople from './components/PopularPeople'
-import FilterComponent from './components/FilterComponent'
 import SidebarComponent from './components/SidebarComponent'
 import MovieDescription from './components/MovieDescription'
 import PeopleDescription from './components/PeopleDescription'
 import MoviePeopleDesc from './components/MoviePeopleDesc'
 import { Router, Scene, Stack, Drawer } from 'react-native-router-flux'
 export default class RouterComponent extends Component{
-	render(){
+	render()
+	{
 		return(
 			<Router>
 				<Stack key="root">
 					<Drawer
-            hideNavBar
-            key="drawer"
-            contentComponent={SidebarComponent}
-            drawerWidth={300}
-            title="Cinematics" >
+						hideNavBar
+						key="drawer"
+						contentComponent={SidebarComponent}
+						drawerWidth={300}
+						title="Cinematics" >
 						<Scene 
 							key = "Home" 
 							component={ Home } 
@@ -65,7 +65,7 @@ export default class RouterComponent extends Component{
 						title = "PeopleDescription"
 						hideNavBar = { true }								
 					/>
-						<Scene
+					<Scene
 						key="MoviePeopleDesc"
 						component= { MoviePeopleDesc}
 						title = "MoviePeopleDesc"
