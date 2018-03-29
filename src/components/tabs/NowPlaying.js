@@ -25,7 +25,7 @@ class NowPlaying extends Component{
 componentDidMount(){
 	this.props.fetchData('https://api.themoviedb.org/3/movie/now_playing?api_key=55032e2af54d05c1326b26b0bf830b60');
 }
-componentWillReceiveProps=(nextProps)=>{
+componentWillReceiveProps = (nextProps)=>{
 	this.setState({list:nextProps.list})	
 }
 	render(){

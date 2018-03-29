@@ -31,36 +31,35 @@ import Icon from 'react-native-vector-icons/FontAwesome'
     return(
       <View style = {{flex:1,backgroundColor:'#fff'}}>
       	<View style = {{flex:1,flexDirection:'column',}}>
-					<View style = {{flex:0.025,flexDirection:'row',backgroundColor:'#333',padding:20}}>		
-						<View style = {{flex:0.2,alignItems:'center'}}>
-							<TouchableOpacity onPress = {() => { Actions.drawerOpen() }}>
-								<Icon name="bars"	style = {{ color:'#fff',fontSize:20,}}/>
-							</TouchableOpacity>
-						</View>
-						<View style = {{flex:0.4,alignItems:'center',justifyContent:'center'}}>
-								<Text style = { {color:'#fff',fontSize:20,}}>Discover</Text>		
-						</View>
-						<View style = {{flex:0.15,alignItems:'center',}}>
-							<TouchableOpacity >
-								<Icon name = 'filter'  style = {{ color:'#fff',fontSize:20,}} />
-							</TouchableOpacity>	
-						</View>
-						<View style = {{flex:0.15,alignItems:'center',}}>
-							<TouchableOpacity>
-								<Icon name = 'sort'  style = {{ color:'#fff',fontSize:20,}} />
-							</TouchableOpacity>	
-						</View>
-						<View style = {{flex:0.1,alignItems:'center',}}>
-							<TouchableOpacity onPress = {() => {this.changeView()}}>
-								<Icon name = {this.state.isGrid ? 'list-ul' : 'th'} style = {{ color:'#fff',fontSize:20,}} />
-							</TouchableOpacity>	
-						</View>
-					</View>
-					<View style = {{ flex:0.975}}>
-						<CommonComponent list = {this.props.list} isGrid = {this.props.isGrid}/>
-					</View>
+			<View style = {{flex:0.025,flexDirection:'row',backgroundColor:'#333',padding:20}}>		
+				<View style = {{flex:0.2,alignItems:'center'}}>
+					<TouchableOpacity onPress = {() => { Actions.drawerOpen() }}>
+						<Icon name="bars"	style = {{ color:'#fff',fontSize:20,}}/>
+					</TouchableOpacity>
 				</View>
-			
+				<View style = {{flex:0.4,alignItems:'center',justifyContent:'center'}}>
+						<Text style = { {color:'#fff',fontSize:20,}}>Discover</Text>		
+				</View>
+				<View style = {{flex:0.15,alignItems:'center',}}>
+					<TouchableOpacity >
+						<Icon name = 'filter'  style = {{ color:'#fff',fontSize:20,}} />
+					</TouchableOpacity>	
+				</View>
+				<View style = {{flex:0.15,alignItems:'center',}}>
+					<TouchableOpacity>
+						<Icon name = 'sort'  style = {{ color:'#fff',fontSize:20,}} />
+					</TouchableOpacity>	
+				</View>
+				<View style = {{flex:0.1,alignItems:'center',}}>
+					<TouchableOpacity onPress = {() => {this.changeView()}}>
+						<Icon name = {this.state.isGrid ? 'list-ul' : 'th'} style = {{ color:'#fff',fontSize:20,}} />
+					</TouchableOpacity>	
+				</View>
+			</View>
+			<View style = {{ flex:0.975}}>
+				<CommonComponent list = {this.props.list} isGrid = {this.props.isGrid}/>
+			</View>
+		</View>			
       </View>
     )
   }

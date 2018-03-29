@@ -1,10 +1,4 @@
 import React, { Component } from 'react'
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native' 
 import Header from './Header'
 import ScrollableTabs from './ScrollableTabs'
 export default class Home extends Component{
@@ -26,12 +20,12 @@ const styles = StyleSheet.create({
 		flex:1,
 		flexDirection:'column',
 	},
-		header:{
-			flex:0.1,
-			backgroundColor:"#333",
-		},
-		tabView:{
-			flex:0.9,
-			backgroundColor:"#333",
-		},
+	header:{
+		flex:0.1,
+		backgroundColor:'#333',
+	},
+	tabView:{
+		flex:0.9,
+		backgroundColor:'#333',
+	},
 }) 

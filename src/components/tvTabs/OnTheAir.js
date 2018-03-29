@@ -30,7 +30,7 @@ class OnTheAir extends Component{
 componentDidMount(){
 	this.props.fetchData('https://api.themoviedb.org/3/tv/on_the_air?api_key=55032e2af54d05c1326b26b0bf830b60');
 }
-componentWillReceiveProps=(nextProps)=>{
+componentWillReceiveProps = (nextProps)=>{
 	this.setState({list:nextProps.list})	
 }
 render(){

@@ -65,11 +65,10 @@ class PersonInfo extends Component {
 										renderItem={({ item }) => {
 											return(
 												<View style={{ flex:1,alignItems:'center',flexWrap: 'wrap',justifyContent:'center',padding:10}} key = {item.file_path}>
-											  	<Image source={{ uri: imgPath + item.file_path}} style={{width:width*0.3, height:height*0.3,padding:10}} />
-                      	</View>
-                      )
-										}
-										}
+											  		<Image source={{ uri: imgPath + item.file_path}} style={{width:width*0.3, height:height*0.3,padding:10}} />
+                      							</View>
+                     						)
+										}}
 									/>
 									:
 									<View><Text>Empty</Text></View>}

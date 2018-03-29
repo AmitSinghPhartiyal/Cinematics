@@ -38,51 +38,47 @@ const imgPath = "https://image.tmdb.org/t/p/w500/"
 				<View style ={{ flex:1,backgroundColor:'#fff'}}>
 					<FlatList
 						refresh = {true}
-	          data={ this.props.cast}
-	          numColumns={1}
-	          ItemSeparatorComponent = { this.FlatListItemSeparator }
-	          keyExtractor={item => item.id.toString()}
-	          renderItem={({item,index}) =>{
+						data={ this.props.cast}
+						numColumns={1}
+						ItemSeparatorComponent = { this.FlatListItemSeparator }
+						keyExtractor={item => item.id.toString()}
+						renderItem={({item,index}) =>{
 						if(item.profile_path){
-	        		return(
-	           		<TouchableOpacity style = {{flex:1,padding:20,flexDirection:'row',borderBottomWidth:0.5,borderBottomColor:'#B5BEC6'}} onPress = {() => { Actions.MoviePeopleDesc({peopleId:item.id})}}>
-	           			<View style = {{flex:3,flexDirection:'column',}} >
-	                  <Image 	source = {{uri :imgPath + item.profile_path}} 
-	                  				style = {{ borderRadius:100,width:100,height:100}} 
-	                   				indicator={ActivityIndicator}
-	                   				borderRadius = {100}/>
-	                </View>
-	                <View style = {{flex:4,flexDirection:'column',justifyContent:'center'}} >
-	                  <Text  style = {{color:"#000",fontSize:15,fontWeight:'bold'}}> { item.name}</Text>
-	                </View>    
-	                <View style = {{flex:3,flexDirection:'column',justifyContent:'center',alignItems:'center'}} >
-	                  <Text  style = {{color:"#000",fontSize:10,}}> { ' as ' + item.character}</Text>
-	                </View>
-	              </TouchableOpacity>
-	        		)
-	  				}else{
-	  					return(
-	           		<TouchableOpacity style = {{flex:1,padding:20,flexDirection:'row',borderBottomWidth:0.5,borderBottomColor:'#B5BEC6'}}>
-	           			<View style = {{flex:35,flexDirection:'column',justifyContent:'center',alignItems:'center',}} >
-	                	<Icon name="image" style ={{fontSize:80}}/>
-	                </View>
-	                <View style = {{flex:45,flexDirection:'column',justifyContent:'center'}} >
-	                  <Text  style = {{color:"#000",fontSize:15,fontWeight:'bold'}}> { item.name}</Text>
-	                </View>    
-	                <View style = {{flex:3,flexDirection:'column',justifyContent:'center',alignItems:'center'}} >
-	                  <Text  style = {{color:"#000",fontSize:10,}}>{'as' + item.character}</Text>
-	                </View>
-	              </TouchableOpacity>
-	        		)
-	  				}
-	  			}}
-		      />		
+	        				return(
+								<TouchableOpacity style = {{flex:1,padding:20,flexDirection:'row',borderBottomWidth:0.5,borderBottomColor:'#B5BEC6'}} onPress = {() => { Actions.MoviePeopleDesc({peopleId:item.id})}}>
+									<View style = {{flex:3,flexDirection:'column',}} >
+										<Image 	source = {{uri :imgPath + item.profile_path}} 
+												style = {{ borderRadius:100,width:100,height:100}} 
+												indicator={ActivityIndicator}
+												borderRadius = {100}/>
+									</View>
+									<View style = {{flex:4,flexDirection:'column',justifyContent:'center'}} >
+										<Text  style = {{color:"#000",fontSize:15,fontWeight:'bold'}}> { item.name}</Text>
+									</View>    
+									<View style = {{flex:3,flexDirection:'column',justifyContent:'center',alignItems:'center'}} >
+										<Text  style = {{color:"#000",fontSize:10,}}> { ' as ' + item.character}</Text>
+									</View>
+								</TouchableOpacity>
+	        				)
+	  					}else{
+							return(
+								<TouchableOpacity style = {{flex:1,padding:20,flexDirection:'row',borderBottomWidth:0.5,borderBottomColor:'#B5BEC6'}}>
+									<View style = {{flex:35,flexDirection:'column',justifyContent:'center',alignItems:'center',}} >
+										<Icon name="image" style ={{fontSize:80}}/>
+									</View>
+									<View style = {{flex:45,flexDirection:'column',justifyContent:'center'}} >
+										<Text  style = {{color:"#000",fontSize:15,fontWeight:'bold'}}> { item.name}</Text>
+									</View>    
+									<View style = {{flex:3,flexDirection:'column',justifyContent:'center',alignItems:'center'}} >
+										<Text  style = {{color:"#000",fontSize:10,}}>{'as' + item.character}</Text>
+									</View>
+								</TouchableOpacity>
+							)}}}
+		      		/>		
 				</View>
-			)
-		
-		
+			)	
+		}
 	}
-}
 
 mapStateToProps = (state, props) => {
   return {
