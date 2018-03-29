@@ -21,8 +21,8 @@ const imgPath = "https://image.tmdb.org/t/p/w500/"
 	constructor(props){
 		super(props)
 		this.state = {
-			peoplelist:[],
-      loading:true,
+		peoplelist:[],
+      	loading:true,
 		}
 	}
 	componentDidMount(){
