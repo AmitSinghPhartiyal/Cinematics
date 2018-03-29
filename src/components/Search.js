@@ -82,16 +82,15 @@ class Search extends Component {
 				</View>
 				<View style = {{ flex:1,backgroundColor:'#333' }}> 
 					<ScrollableTabView
-						renderTabBar = {() => <ScrollableTabBar />}
+						renderTabBar = { () => <ScrollableTabBar /> }
 						tabBarActiveTextColor = "#fff" 
 						tabBarInactiveTextColor = "#bdc3c7"
 						tabBarUnderlineStyle={{backgroundColor: '#76d46e'}}
-						onChangeTab = {(e) => {this.changePlaceholderState(e)}}
-						>
+						onChangeTab = { (e) => { this.changePlaceholderState(e) }} >
 						<Movies tabLabel="MOVIES" data = {this.props.searchResult}/>
 						<Actors tabLabel="ACTORS" data = {this.props.searchResult}/>
-			        	<TvShows tabLabel="TV SHOWS" data = {this.props.searchResult}/>
-      				</ScrollableTabView>
+			      <TvShows tabLabel="TV SHOWS" data = {this.props.searchResult}/>
+      		</ScrollableTabView>
 				</View>
 			</View>
 		)
