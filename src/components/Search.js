@@ -96,7 +96,6 @@ class Search extends Component {
 		)
 	}
 }
-
 mapStateToProps=(state,props)=>{
 	return{
 		placeholderText:state.movieReducer.data,

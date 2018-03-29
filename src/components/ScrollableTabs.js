@@ -12,11 +12,11 @@ export default class ScrollableTabs extends Component{
 				tabBarActiveTextColor = "#fff" 
 				tabBarInactiveTextColor = "#bdc3c7"
 				tabBarUnderlineStyle={{backgroundColor: '#76d46e'} }>
-        <NowPlaying tabLabel="NOW PLAYING" />
-        <TopBoxOffice tabLabel="TOP BOX OFFICE" />
-        <Upcoming tabLabel="UPCOMING" />
-        <Popular tabLabel="POPULAR" />
-      </ScrollableTabView>
+				<NowPlaying tabLabel="NOW PLAYING" />
+				<TopBoxOffice tabLabel="TOP BOX OFFICE" />
+				<Upcoming tabLabel="UPCOMING" />
+				<Popular tabLabel="POPULAR" />
+			</ScrollableTabView>
 		)
 	}
 }
