@@ -20,8 +20,7 @@ export default class RouterComponent extends Component{
             key="drawer"
             contentComponent={SidebarComponent}
             drawerWidth={300}
-            title="Cinematics"
-					>
+            title="Cinematics" >
 						<Scene 
 							key = "Home" 
 							component={ Home } 
@@ -29,25 +28,25 @@ export default class RouterComponent extends Component{
 							hideNavBar = { true }
 							initial		
 						/>
-					<Scene 
-						key = "Tvshows" 
-						component={ Tvshows } 
-						title="Tvshows" 
-						hideNavBar = { true }					
-					/>
-					<Scene 
-						key = "Discover" 
-						component={ Discover } 
-						title="Discover" 
-						hideNavBar = { true }							
-					/>
-						<Scene 
-						key = "PopularPeople" 
-						component={ PopularPeople} 
-						title="PopularPeople" 
-						hideNavBar = { true }	
-					/>
-				</Drawer>	
+  					<Scene 
+  						key = "Tvshows" 
+  						component={ Tvshows } 
+  						title="Tvshows" 
+  						hideNavBar = { true }					
+  					/>
+  					<Scene 
+  						key = "Discover" 
+  						component={ Discover } 
+  						title="Discover" 
+  						hideNavBar = { true }							
+  					/>
+  						<Scene 
+  						key = "PopularPeople" 
+  						component={ PopularPeople} 
+  						title="PopularPeople" 
+  						hideNavBar = { true }	
+  					/>
+				  </Drawer>	
 					<Scene
 						key="Search"
 						component= { Search }
