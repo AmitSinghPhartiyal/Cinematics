@@ -15,67 +15,66 @@ export default class RouterComponent extends Component{
 		return(
 			<Router>
 				<Stack key="root">
-					 <Drawer
-              hideNavBar
-              key="drawer"
-              contentComponent={SidebarComponent}
-              drawerWidth={300}
-              title="Cinematics"
-						>
-							<Scene 
-								key = "Home" 
-								component={ Home } 
-								title="Home" 
-								hideNavBar = { true }
-								initial		
-							/>
-							<Scene 
-								key = "Tvshows" 
-								component={ Tvshows } 
-								title="Tvshows" 
-								hideNavBar = { true }
-									
-							/>
-							<Scene 
-								key = "Discover" 
-								component={ Discover } 
-								title="Discover" 
-								hideNavBar = { true }							
-							/>
-								<Scene 
-								key = "PopularPeople" 
-								component={ PopularPeople} 
-								title="PopularPeople" 
-								hideNavBar = { true }	
-
-							/>
-						</Drawer>	
-						<Scene
-							key="Search"
-							component= { Search }
-							title = "Search"
-							hideNavBar = { true }	
+					<Drawer
+            hideNavBar
+            key="drawer"
+            contentComponent={SidebarComponent}
+            drawerWidth={300}
+            title="Cinematics"
+					>
+						<Scene 
+							key = "Home" 
+							component={ Home } 
+							title="Home" 
+							hideNavBar = { true }
+							initial		
 						/>
+					<Scene 
+						key = "Tvshows" 
+						component={ Tvshows } 
+						title="Tvshows" 
+						hideNavBar = { true }
+							
+					/>
+					<Scene 
+						key = "Discover" 
+						component={ Discover } 
+						title="Discover" 
+						hideNavBar = { true }							
+					/>
+						<Scene 
+						key = "PopularPeople" 
+						component={ PopularPeople} 
+						title="PopularPeople" 
+						hideNavBar = { true }	
+					/>
+				</Drawer>	
+					<Scene
+						key="Search"
+						component= { Search }
+						title = "Search"
+						hideNavBar = { true }	
+					/>
+					<Scene
+						key="MovieDescription"
+						component= { MovieDescription }
+						title = "MovieDescription"
+						hideNavBar = { true }								
+					/>
+					<Scene
+						key="PeopleDescription"
+						component= { PeopleDescription }
+						title = "PeopleDescription"
+						hideNavBar = { true }								
+					/>
 						<Scene
-							key="MovieDescription"
-							component= { MovieDescription }
-							title = "MovieDescription"
-							hideNavBar = { true }								
-						/>
-						<Scene
-							key="PeopleDescription"
-							component= { PeopleDescription }
-							title = "PeopleDescription"
-							hideNavBar = { true }								
-						/>
-							<Scene
-							key="MoviePeopleDesc"
-							component= { MoviePeopleDesc}
-							title = "MoviePeopleDesc"
-							hideNavBar = { true }								
-						/>				
+						key="MoviePeopleDesc"
+						component= { MoviePeopleDesc}
+						title = "MoviePeopleDesc"
+						hideNavBar = { true }								
+					/>				
 				</Stack>
 			</Router>
-			)
+		)
 	}
 }
