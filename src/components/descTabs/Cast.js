@@ -12,7 +12,7 @@ import Image from 'react-native-image-progress'
 import * as myActions from '../../Actions/Actions'
 import { Actions } from 'react-native-router-flux'
 import Icon from 'react-native-vector-icons/FontAwesome'  
-const imgPath = "https://image.tmdb.org/t/p/w500/"
+import { IMAGE_PATH } from "../constant/const"
  class Cast extends Component {
 	constructor(props){
 		super(props)
@@ -47,7 +47,7 @@ const imgPath = "https://image.tmdb.org/t/p/w500/"
 	        				return(
 								<TouchableOpacity style = {{flex:1,padding:20,flexDirection:'row',borderBottomWidth:0.5,borderBottomColor:'#B5BEC6'}} onPress = {() => { Actions.MoviePeopleDesc({peopleId:item.id})}}>
 									<View style = {{flex:3,flexDirection:'column',}} >
-										<Image 	source = {{uri :imgPath + item.profile_path}} 
+										<Image 	source = {{uri :IMAGE_PATH + item.profile_path}} 
 												style = {{ borderRadius:100,width:100,height:100}} 
 												indicator={ActivityIndicator}
 												borderRadius = {100}/>

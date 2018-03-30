@@ -1,7 +1,21 @@
-import React, { Component } from 'react'
+import  React,{ Component } from 'react'
 import {
+	View,
+	Text,
+	Image,
+	FlatList,
 	StyleSheet,
-} from 'react-native' 
+	Dimensions,
+	TouchableOpacity,
+	ActivityIndicator
+} from 'react-native'
+import Header from './Header'
+import OnTheAir from './tvTabs/OnTheAir'
+import PopularTv from './tvTabs/PopularTv'
+import TopRatedTv from './tvTabs/TopRatedTv'
+import ScrollableTabs from './ScrollableTabs'
+import AiringToday from './tvTabs/AiringToday'
+import ScrollableTabView,{ScrollableTabBar} from 'react-native-scrollable-tab-view'
 export default class Tvshows extends Component{
 	render(){
 		return(
@@ -11,7 +25,7 @@ export default class Tvshows extends Component{
 				</View>
 				<View style = { styles.tabView }>
 					<ScrollableTabView
-						renderTabBar = {() => <ScrollableTabBar />}
+						renderTabBar = { () => <ScrollableTabBar /> }
 						tabBarActiveTextColor = "#fff" 
 						tabBarInactiveTextColor = "#bdc3c7"
 						tabBarUnderlineStyle={{backgroundColor: '#76d46e'} }>

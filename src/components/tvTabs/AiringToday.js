@@ -6,18 +6,17 @@ import {
 	FlatList,
 	StyleSheet,
 	Dimensions,
-  TouchableOpacity,
-  ActivityIndicator
+  	TouchableOpacity,
+  	ActivityIndicator
 } from 'react-native'
 import { Actions } from 'react-native-router-flux'
-import Icon from 'react-native-vector-icons/FontAwesome'  
-const imgPath = "https://image.tmdb.org/t/p/w500/";
-const {width, height} = Dimensions.get('window')
+import Icon from 'react-native-vector-icons/FontAwesome'
 import * as myActions from '../../Actions/Actions';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import icon from '../../images/tmdb.png';
 import CommonComponent from '../tabs/CommonComponent'
+const {width, height} = Dimensions.get('window')
 
 class AiringToday extends Component{
 	  constructor(props){
@@ -59,5 +58,5 @@ mapStateToProps=(state,props)=>{
 }
 mapDispatchToProps=(dispatch)=>{
 	return bindActionCreators(myActions,dispatch)
-
-export default connect(mapStateToProps,mapDispatchToProps)(AiringToday);
+}
+export default connect(mapStateToProps,mapDispatchToProps)(AiringToday)

@@ -14,7 +14,7 @@ import Image from 'react-native-image-progress'
 import * as myActions from '../../Actions/Actions'
 import Icon from 'react-native-vector-icons/FontAwesome'
 const { width, height } = Dimensions.get('window')
-const imgPath = "https://image.tmdb.org/t/p/w500/"
+import { IMAGE_PATH } from "../constant/const"
 class PersonInfo extends Component {
 	constructor(props) {
 		super(props)
@@ -65,7 +65,7 @@ class PersonInfo extends Component {
 										renderItem={({ item }) => {
 											return(
 												<View style={{ flex:1,alignItems:'center',flexWrap: 'wrap',justifyContent:'center',padding:10}} key = {item.file_path}>
-											  		<Image source={{ uri: imgPath + item.file_path}} style={{width:width*0.3, height:height*0.3,padding:10}} />
+											  		<Image source={{ uri: IMAGE_PATH + item.file_path}} style={{width:width*0.3, height:height*0.3,padding:10}} />
                       							</View>
                      						)
 										}}

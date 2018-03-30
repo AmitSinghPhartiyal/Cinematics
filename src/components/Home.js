@@ -1,5 +1,14 @@
 import React, { Component } from 'react'
 import Header from './Header'
+import {
+	View,
+	Text,
+	FlatList,
+	Dimensions,
+	StyleSheet,
+	TouchableOpacity,
+	ActivityIndicator,
+  } from 'react-native'
 import ScrollableTabs from './ScrollableTabs'
 export default class Home extends Component{
 	render(){

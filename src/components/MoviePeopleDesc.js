@@ -20,7 +20,7 @@ import { Actions } from 'react-native-router-flux'
 import Icon from 'react-native-vector-icons/FontAwesome'  
 import ScrollableTabView,{ScrollableTabBar} from 'react-native-scrollable-tab-view'
 const {width, height} = Dimensions.get('window')
-const imgPath = "https://image.tmdb.org/t/p/w500/"
+import { IMAGE_PATH } from "./constant/const"
 class MoviePeopleDesc extends Component{
 	constructor(props){
     super(props); 
@@ -66,7 +66,7 @@ class MoviePeopleDesc extends Component{
 								</TouchableOpacity>
 							</View>
 							<View style= {{ flex:0.7,backgroundColor:'#FEFCFD',}}>
-								<Image source = {{uri :imgPath + this.props.persondata.profile_path}} 
+								<Image source = {{uri :IMAGE_PATH + this.props.persondata.profile_path}} 
 										style = {{ flex:1,position:'relative'}}
 										indicator={ActivityIndicator}
 								/>

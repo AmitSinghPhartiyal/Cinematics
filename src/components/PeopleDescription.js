@@ -9,6 +9,12 @@ import {
 	ActivityIndicator,
 	TouchableOpacity,
 } from 'react-native'
+import {
+	Menu,
+	MenuOptions,
+	MenuOption,
+	MenuTrigger,
+  } from 'react-native-popup-menu'
 import PersonInfo from './peopleTabs/PersonInfo'
 import Movies from './peopleTabs/Movies'
 import TvShows from './peopleTabs/TvShows'
@@ -20,7 +26,7 @@ import { Actions } from 'react-native-router-flux'
 import Icon from 'react-native-vector-icons/FontAwesome'  
 import ScrollableTabView,{ScrollableTabBar} from 'react-native-scrollable-tab-view'
 const {width, height} = Dimensions.get('window')
-const imgPath = "https://image.tmdb.org/t/p/w500/"
+import { IMAGE_PATH } from "./constant/const"
 class PeopleDescription extends Component{
 	constructor(props){
 		super(props); 
@@ -57,7 +63,17 @@ class PeopleDescription extends Component{
 								<Icon name = "home" style={{color:'#fff',fontSize:25}}/>
 							</TouchableOpacity>
 							<TouchableOpacity style = {{flex:0.1,justifyContent:'center',alignItems:'center'}}>
-								<Icon name = "ellipsis-v" style={{color:'#fff',fontSize:25}}/>
+								<Menu style = {{flex:0.1,justifyContent:'center',alignItems:'center',}}>
+									<MenuTrigger>
+									<Icon name = "ellipsis-v" style={{flex:0.1,color:'#fff',fontSize:25,}}/>
+									</MenuTrigger>
+									<MenuOptions style = {{padding:10}}>
+									<MenuOption onSelect={() => alert(`Save`)} text='Google Play Store' />
+									<MenuOption onSelect={() => alert(`Tmdb`)} text = 'View on Tmdb'/>   
+									<MenuOption onSelect={() => alert(`IMDb`)} text='View on IMDb' />
+									<MenuOption onSelect={() => alert(`Join`)} text='Join the discussion' />
+									</MenuOptions>
+								</Menu>
 							</TouchableOpacity>
 						</View>
 						<View style= {{ flex:0.8,backgroundColor:'#FEFCFD',}}>

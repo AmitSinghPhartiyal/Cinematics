@@ -16,7 +16,6 @@ import CommonComponent from '../tabs/CommonComponent'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import icon from '../../images/tmdb.png'
-const imgPath = "https://image.tmdb.org/t/p/w500/"
 const {width, height} = Dimensions.get('window')
 
 class OnTheAir extends Component{

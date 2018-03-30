@@ -13,7 +13,7 @@ import Image from 'react-native-image-progress'
 import { Actions } from 'react-native-router-flux'
 import CommonComponent from '../tabs/CommonComponent'
 import Icon from 'react-native-vector-icons/FontAwesome'  
-const imgPath = 'https://image.tmdb.org/t/p/w500/'
+import { IMAGE_PATH } from "../constant/const"
 const {width, height} = Dimensions.get('window')
 export default class Actors extends Component {
 	constructor(props){
@@ -36,7 +36,7 @@ export default class Actors extends Component {
 							return(
 								<TouchableOpacity style = {{flex:1,padding:20,flexDirection:'row',borderBottomWidth:0.5,borderBottomColor:'#B5BEC6'}}>
 									<View style = {{flex:2,flexDirection:'column',}} >
-										<Image 	source = {{uri :imgPath + item.profile_path}} 
+										<Image 	source = {{uri :IMAGE_PATH + item.profile_path}} 
 											style = {{ borderRadius:100,width:100,height:100}} 
 											indicator={ActivityIndicator}
 											borderRadius = {100}

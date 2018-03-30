@@ -14,7 +14,6 @@ import Image from 'react-native-image-progress'
 import * as myActions from '../../Actions/Actions'
 import Icon from 'react-native-vector-icons/FontAwesome'
 const { width, height } = Dimensions.get('window')
-const imgPath = "https://image.tmdb.org/t/p/w500/"
 class Movies extends Component {
 	constructor(props) {
 		super(props)

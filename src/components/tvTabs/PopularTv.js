@@ -16,7 +16,6 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import icon from '../../images/tmdb.png';
 import CommonComponent from '../tabs/CommonComponent'
-const imgPath = "https://image.tmdb.org/t/p/w500/";
 const {width, height} = Dimensions.get('window')
 class PopularTv extends Component{
 	  constructor(props){
