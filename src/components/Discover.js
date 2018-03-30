@@ -1,23 +1,29 @@
 import React, { Component } from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+} from "react-native";
 import Header from "./Header";
+import Modal from "react-native-modal";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import Modal from "react-native-modal";
 import * as myActions from "../Actions/Actions";
 import { Actions } from "react-native-router-flux";
+import { Radio, List, ListItem, Right } from "native-base";
 import CommonComponent from "./tabs/CommonComponent";
 import Icon from "react-native-vector-icons/FontAwesome";
 class Discover extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      list: [],
+      list: [],  
       loading: true,
       isGrid: true,
       changeSidebar: false,
-			sidebarPosition: false,
-			arrange: 'popularity.desc'
+      sidebarPosition: false,
+      selectedItem:'popularity.desc',
+      isVisible: false
     };
   }
   componentDidMount() {
@@ -25,6 +31,12 @@ class Discover extends Component {
       "https://api.themoviedb.org/3/discover/movie?api_key=55032e2af54d05c1326b26b0bf830b60"
     );
   }
+    discover(){
+      console.log("Discver state",this.state);
+      this.props.fetchData("https://api.themoviedb.org/3/discover/movie?api_key=55032e2af54d05c1326b26b0bf830b60&sort_by=" + this.state.selectedItem);
+    }
+
+  
   drawerFunction = async () => {
     await this.setState({ changeSidebar: true, sidebarPosition: true });
     this.props.changeDrawer(this.state.changeSidebar);
@@ -42,10 +54,17 @@ class Discover extends Component {
     this.props.moviesView(this.state.isGrid);
   };
   componentWillReceiveProps(nextProps) {
-    //	this.setState({ changeSidebar: nextProps.changeSidebar })
+    this.setState({ changeSidebar: nextProps.changeSidebar });
+    console.log("Next prop",nextProps);
+    // if (this.props.discover != nextProps.discover) {
+    //   this.setState({
+    //     discover: nextProps.discover,
+    //     isLoading: nextProps.isLoading
+    //   });
+    // }
   }
   render() {
-    console.log("Discovery data", this.props);
+    console.log("Discovery data", this.state);
     return (
       <View style={{ flex: 1, backgroundColor: "#fff" }}>
         <View style={{ flex: 1, flexDirection: "column" }}>
@@ -97,7 +116,11 @@ class Discover extends Component {
                 justifyContent: "center"
               }}
             >
-              <TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => {
+                  this.setState({ isVisible: true });
+                }}
+              >
                 <Icon name="sort" style={{ color: "#fff", fontSize: 20 }} />
               </TouchableOpacity>
             </View>
@@ -126,7 +149,8 @@ class Discover extends Component {
               isGrid={this.props.isGrid}
             />
           </View>
-          <Modal
+        </View>
+        <Modal
             isVisible={this.state.isVisible}
             onBackdropPress={() => this.setState({ isVisible: false })}
           >
@@ -143,102 +167,77 @@ class Discover extends Component {
               </Text>
               <List>
                 <ListItem
-                  onPress={() => {
-                    this.setState({
-                      arrange: "original_title.desc",
+                  onPress={ async () => {
+                    await this.setState({
+                      selectedItem: "original_title.desc",
                       isVisible: false,
                       loading: true
                     });
-                    this.props.Discovernow(
-                      this.props.starting,
-                      this.props.ending,
-                      this.props.geniss,
-                      this.state.arrange
-                    );
+                    this.discover();
                   }}
                 >
                   <Radio
-                    selected={this.state.arrange == "original_title.desc"}
+                    selected={this.state.selectedItem == "original_title.desc"}
                   />
-                  <Text style={{ paddingLeft: 10, color: "#000" }}>Title</Text>
+                  <Text style={{ paddingLeft: 10,color: "#000"}}>Title</Text>
                 </ListItem>
                 <ListItem
                   onPress={() => {
                     this.setState({
-                      arrange: "popularity.desc",
+                      selectedItem: "popularity.desc",
                       isVisible: false,
                       loading: true
                     });
-                    this.props.Discovernow(
-                      this.props.starting,
-                      this.props.ending,
-                      this.props.geniss,
-                      this.state.arrange
-                    );
+                    this.discover();
                   }}
                 >
-                  <Radio selected={this.state.arrange == "popularity.desc"} />
-                  <Text style={{ paddingLeft: 10, color: "#000" }}>
-                    Popularity
-                  </Text>
+                  <Radio
+                    selected={this.state.selectedItem == "popularity.desc"}
+                  />
+                  <Text style={{paddingLeft: 10,color: "#000"}}>Popularity</Text>
                 </ListItem>
                 <ListItem
                   onPress={() => {
                     this.setState({
-                      arrange: "vote_average.desc",
+                      selectedItem: "vote_average.desc",
                       isVisible: false,
                       loading: true
                     });
-                    this.props.Discovernow(
-                      this.props.starting,
-                      this.props.ending,
-                      this.props.geniss,
-                      this.state.arrange
-                    );
+                    this.discover();
                   }}
                 >
-                  <Radio selected={this.state.arrange == "vote_average.desc"} />
-                  <Text style={{ paddingLeft: 10, color: "#000" }}>Rating</Text>
+                  <Radio
+                    selected={this.state.selectedItem == "vote_average.desc"}
+                  />
+                  <Text style={{paddingLeft: 10,color: "#000"}}>Rating</Text>
                 </ListItem>
                 <ListItem
                   onPress={() => {
                     this.setState({
-                      arrange: "release_date.desc",
+                      selectedItem: "release_date.desc",
                       isVisible: false,
                       loading: true
                     });
-                    this.props.Discovernow(
-                      this.props.starting,
-                      this.props.ending,
-                      this.props.geniss,
-                      this.state.arrange
-                    );
+                    this.discover();
                   }}
                 >
-                  <Radio selected={this.state.arrange == "release_date.desc"} />
-                  <Text style={{ paddingLeft: 10, color: "#000" }}>
-                    Release Date
-                  </Text>
+                  <Radio
+                    selected={this.state.selectedItem == "release_date.desc"}
+                  />
+                  <Text style={{paddingLeft: 10,color: "#000"}}>Release Date</Text>
                 </ListItem>
                 <ListItem
                   onPress={() => {
                     this.setState({
-                      arrange: "revenue.desc",
+                      selectedItem: "revenue.desc",
                       isVisible: false,
                       loading: true
                     });
-                    this.props.Discovernow(
-                      this.props.starting,
-                      this.props.ending,
-                      this.props.geniss,
-                      this.state.arrange
-                    );
+                    this.discover();
                   }}
                 >
-                  <Radio selected={this.state.arrange == "revenue.desc"} />
-                  <Text style={{ paddingLeft: 10, color: "#000" }}>
-                    Revenue
-                  </Text>
+                  <Radio selected={this.state.selectedItem == "revenue.desc"} />
+                  <Text style={{paddingLeft: 10,color: "#000"}}>Revenue</Text>
                 </ListItem>
               </List>
               <Text
@@ -254,18 +253,21 @@ class Discover extends Component {
               </Text>
             </View>
           </Modal>
-        </View>
+			
       </View>
     );
   }
 }
 mapStateToProps = (state, props) => {
+  console.log("STATE",state);
   return {
-    list: state.movieReducer.nowdata,
+    list: state.filterReducer.data,
     loading: state.movieReducer.loading,
     isGrid: state.movieReducer.isGrid,
     changeSidebar: state.drawerReducer.changeSidebar,
-    sidebarPosition: state.drawerReducer.sidebarPosition
+    sidebarPosition: state.drawerReducer.sidebarPosition,
+    discover: state.movieReducer.filterdata,
+    
   };
 };
 mapDispatchToProps = dispatch => {

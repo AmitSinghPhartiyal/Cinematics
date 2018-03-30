@@ -1,7 +1,9 @@
 let defaultState = { loading: true, data: [], placeholderText:'Search movie' }
 export const movieReducer = (state = defaultState, action) => {
 	switch (action.type) {
+	
 	case 'NOWPLAYING':
+	
 		return {
 			...state,
 			loading: false,
@@ -92,6 +94,12 @@ export const movieReducer = (state = defaultState, action) => {
 			...state,
 			loading: false,
 			trailordata : action.payload,
+		}
+	case 'FILTER':
+	    return {
+			...state,
+			loading: false,
+			filterdata : action.payload,
 		}
 	default:
 		return { ...state }

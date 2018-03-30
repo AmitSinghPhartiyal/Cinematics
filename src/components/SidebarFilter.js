@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Dropdown } from "react-native-material-dropdown";
 import Icon from "react-native-vector-icons/FontAwesome";
 import {
   StyleSheet,
@@ -14,80 +15,126 @@ import {
   ActivityIndicator
 } from "react-native";
 import { Actions } from "react-native-router-flux";
-const {width, height} = Dimensions.get('window')
+import { METHOD } from "./constant/const";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import * as myActions from "../Actions/Actions";
+const { width, height } = Dimensions.get("window");
 import { IMDBICON } from "./constant/const";
-export default class SidebarFilter extends Component {
+class SidebarFilter extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      from: 2018,
+      to: 2018,
+      genres: [],
+      selectedGenre: ""
+    };
+  }
+  componentDidMount = () => {
+    this.props.getGenre();
+  };
+  componentWillReceiveProps = nextProps => {
+    if (this.props.genres != nextProps.genres) {
+      this.setState({ genres: nextProps.genres });
+    }
+  };
   render() {
     return (
-      <View style={styles.sidemenumaindiv}>
-        <ScrollView>
-          <View style={styles.drawer}>
-            <View style={styles.drawerHeader}>
-              <View style={styles.tmdbImgView}>
-                <Image source={IMDBICON} style={styles.tmdbImage} />
-              </View>
-              <View style={styles.tmdbTitleView}>
-                <Text style={{ color: "#fff" }}>Connect to TMDb</Text>
-              </View>
-            </View>
+      <View
+        style={{
+          flex: 1,
+          flexDirection: "column",
+          paddingTop: Platform.OS == "ios" ? 20 : 0
+        }}
+      >
+        <View
+          style={{
+            flex: 0.08,
+            alignItems: "center",
+            flexDirection: "row",
+            backgroundColor: "#333435"
+          }}
+        >
+          <View style={{ margin: 10, flex: 0.7 }}>
+            <Text style={{ textAlign: "left", fontSize: 20, color: "#fff" }}>
+              Filter
+            </Text>
           </View>
           <TouchableOpacity
-            style={styles.sidemenuitems}
+            style={{ margin: 10, flex: 0.3 }}
             onPress={() => {
-              Actions.Home();
+              this.props.applyFilter(
+                this.state.selectedGenre,
+                this.state.from,
+                this.state.to
+              );
             }}
           >
-            <View style={styles.iconView}>
-              <Icon name="film" size={20} color="#BDC3C7" />
-            </View>
-            <View style={styles.textView}>
-              <Text style={styles.sidemenuText}>Movies</Text>
-            </View>
+            <Text style={{ textAlign: "right", fontSize: 16, color: "#fff" }}>
+              Apply
+            </Text>
           </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.sidemenuitems}
-            onPress={() => {
-              Actions.Tvshows();
-            }}
-          >
-            <View style={styles.iconView}>
-              <Icon name="tv" size={20} color="#BDC3C7" />
+        </View>
+        <View
+          style={{
+            flex: 0.92,
+            flexDirection: "column",
+            backgroundColor: "#fff"
+          }}
+        >
+          <View style={{ backgroundColor: "#BDC3C7", padding: 10 }}>
+            <Text>Year Range</Text>
+          </View>
+          <View style={{ flexDirection: "row" }}>
+            <View style={{ flex: 0.5 }}>
+              <Dropdown
+                value={this.state.from}
+                data={METHOD.getYears()}
+                onChangeText={selected => {
+                  this.setState({ from: selected });
+                }}
+              />
             </View>
-            <View style={styles.textView}>
-              <Text style={styles.sidemenuText}>Tv Shows</Text>
+            <View style={{ flex: 0.5 }}>
+              <Dropdown
+                value={this.state.to}
+                data={METHOD.getYears()}
+                onChangeText={selected => {
+                  if (this.state.from < this.state.to)
+                    this.setState({ to: selected });
+                  else this.setState({ to: this.state.from });
+                }}
+              />
             </View>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.sidemenuitems}
-            onPress={() => {
-              Actions.Discover();
-            }}
-          >
-            <View style={styles.iconView}>
-              <Icon name="search" size={20} color="#BDC3C7" />
-            </View>
-            <View style={styles.textView}>
-              <Text style={styles.sidemenuText}>Discover</Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.sidemenuitems}
-            onPress={() => {
-              Actions.PopularPeople();
-            }}
-          >
-            <View style={styles.iconView}>
-              <Icon name="user" size={20} color="#BDC3C7" />
-            </View>
-            <View style={styles.textView}>
-              <Text style={styles.sidemenuText}>Popular People</Text>
-            </View>
-          </TouchableOpacity>
-        </ScrollView>
+          </View>
+          <View style={{ backgroundColor: "#BDC3C7", padding: 10 }}>
+            <Text>Genres</Text>
+          </View>
+          <Dropdown
+            label="ALL"
+            data={this.props.genres}
+            onChangeText={selected =>
+              this.props.genres.forEach(item => {
+                if (item.value == selected)
+                  this.setState({ selectedGenre: item.id });
+              })
+            }
+          />
+        </View>
       </View>
     );
   }
 }
+mapStateToProps = (state, props) => {
+  return {
+    genres: state.filterReducer.genres
+  };
+};
+mapDispatchToProps = dispatch => {
+  return bindActionCreators(myActions, dispatch);
+};
+export default connect(mapStateToProps, mapDispatchToProps)(SidebarFilter);
 
 const styles = StyleSheet.create({
   container: {

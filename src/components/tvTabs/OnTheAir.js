@@ -17,7 +17,6 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import icon from '../../images/tmdb.png'
 const {width, height} = Dimensions.get('window')
-
 class OnTheAir extends Component{
 	  constructor(props){
     super(props); 

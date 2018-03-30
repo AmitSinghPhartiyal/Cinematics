@@ -44,8 +44,7 @@ class Reviews extends Component {
 					</View>
 				</View>
 			)
-		}
-		
+		}	
 	}
 }
 

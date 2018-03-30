@@ -7,7 +7,6 @@ import {
   TouchableOpacity,
   ActivityIndicator
 } from "react-native";
-
 import Header from "./Header";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";

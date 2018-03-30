@@ -13,7 +13,7 @@ import Image from 'react-native-image-progress'
 import { Actions } from 'react-native-router-flux'
 import CommonComponent from '../tabs/CommonComponent'
 import Icon from 'react-native-vector-icons/FontAwesome'
-import { IMAGE_PATH } from "../constant/const"  
+import { IMAGE_PATH } from '../constant/const'  
 const {width, height} = Dimensions.get('window')
 export default class TvShows extends Component {
 	constructor(props){
@@ -24,16 +24,16 @@ export default class TvShows extends Component {
 	}
 	render(){
 		
-		if(this.props.loading){
+		 if(this.props.loading){
 		 	return(
 		 		<ActivityIndicator
 		 			animating = { true }
 		 			style = {{ height:120 }}
 		 			size = 'large'
-		 			color = '#76d46e'
+					color = '#76d46e'
 		 		/>
-		 	)
-		 }else{
+		 	 )
+		  }else{
 			return(
 				<View style = {{flex:1,backgroundColor:'#fff',}}>
 					<FlatList
