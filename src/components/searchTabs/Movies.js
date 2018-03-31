@@ -8,13 +8,11 @@ import {
 	ActivityIndicator,
 	TouchableOpacity
 } from 'react-native'
-import icon from '../../images/tmdb.png'
 import Image from 'react-native-image-progress'
 import { Actions } from 'react-native-router-flux'
 import Icon from 'react-native-vector-icons/FontAwesome'  
-import { IMAGE_PATH } from '../constant/const'
+import { IMAGE_PATH, COLORS } from '../constant/'
 const {width, height} = Dimensions.get('window')
-import CommonComponent from '../tabs/CommonComponent'
 export default class Movie extends Component {
 	constructor(props){
 		super(props)
@@ -29,12 +27,12 @@ export default class Movie extends Component {
 					animating = { true }
 					style = {{ height:120 }}
 					size = 'large'
-					color = '#76d46e'
+					color = { COLORS.ACTIVE_TAB_UNDERLINE }
 				/>
 			)
 		}else{
 			return(
-				<View style = {{flex:1,backgroundColor:'#fff',}}>
+				<View style = {{flex:1,backgroundColor:COLORS.WHITE,}}>
 					<FlatList
 						data={ this.props.data }
 						numColumns={ 1 }

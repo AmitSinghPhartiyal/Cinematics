@@ -1,101 +1,77 @@
+import { DISPATCH } from '../components/constant/'
 let defaultState = { loading: true, data: [], placeholderText:'Search movie' }
 export const movieReducer = (state = defaultState, action) => {
+	console.log("REDUCER",action);
 	switch (action.type) {
-	
-	case 'NOWPLAYING':
-	
+	case DISPATCH.NOW_PLAYING:
 		return {
 			...state,
 			loading: false,
 			nowdata: action.payload,
 		}
-	case 'TOPRATED':
+	case DISPATCH.TOP_RATED:
 		return {
 			...state,
 			loading: false,
 			topdata: action.payload,
 		}
-	case 'UPCOMING':
+	case DISPATCH.UP_COMING:
 		return {
 			...state,
 			loading: false,
 			upcomingdata: action.payload,
 		} 
-	case 'POPULAR':
+	case DISPATCH.POPULAR:
 		return {
 			...state,
 			loading: false,
 			populardata: action.payload,
 		} 
-	case 'ISGRID':
+	case DISPATCH.IS_GRID:
 		return {
 			...state,
 			loading: false,
 			isGrid : action.payload
 		}
-	case 'SETCURRENT':
+	case DISPATCH.SET_CURRENT:
 		return {
 			...state,
 			loading: false,
 			detail : action.payload,
 		}
-	case 'AIRINGTODAY':
-		return {
-			...state,
-			loading: false,
-			airingtvdata : action.payload,
-		}
-	case 'ONTHEAIR':
-		return {
-			...state,
-			loading: false,
-			onairtvdata : action.payload,
-		}
-	case 'POPULARTV':
-		return {
-			...state,
-			loading: false,
-			populartvdata : action.payload,
-		}
-	case 'TOPRATEDTV':
-		return {
-			...state,
-			loading: false,
-			topratedtvdata : action.payload,
-		}
-	case 'REVIEW':
+	case DISPATCH.REVIEW:
 		return {
 			...state,
 			reviewdata : action.payload,
 		}
-	case 'CAST':
+	case DISPATCH.CAST:
 		return {
 			...state,
 			castdata : action.payload,
 		}
-	case 'DETAILS':
+	case DISPATCH.DETAILS:
 		return {
 			...state,
 			detaildata : action.payload,
 		}
-	case 'POPULARPEOPLE':
+	case DISPATCH.POPULAR_PEOPLE:
 		return {
 			...state,
 			peopledata : action.payload,
 		}
-	case 'CHANGEPLACEHOLDER':
+	case DISPATCH.CHANGE_PLACEHOLDER:
 		return {
 			...state,
 			loading: false,
 			data : action.payload,
 		}
-	case 'MOVIETRAILORS':
+	case DISPATCH.MOVIE_TRAILORS:
 	    return {
 			...state,
 			loading: false,
 			trailordata : action.payload,
 		}
-	case 'FILTER':
+	case DISPATCH.FILTER:
 	    return {
 			...state,
 			loading: false,

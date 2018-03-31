@@ -1,4 +1,4 @@
-import {METHOD} from '../components/constant/const'
+import { METHOD, DISPATCH } from '../components/constant/'
 import { Actions } from 'react-native-router-flux'
 import _ from 'lodash'
 export function fetchData(uri) {
@@ -8,23 +8,23 @@ export function fetchData(uri) {
 			.then(resjson => {
 				data = resjson.results
 				if (uri.match(/now_playing/)) {
-					dispatch({ type: 'NOWPLAYING', payload: data })
+					dispatch({ type: DISPATCH.NOW_PLAYING, payload: data })
 				} else if (uri.match(/movie\/top_rated/)) {
-					dispatch({ type: 'TOPRATED', payload: data })
+					dispatch({ type: DISPATCH.TOP_RATED, payload: data })
 				} else if (uri.match(/upcoming/)) {
-					dispatch({ type: 'UPCOMING', payload: data })
+					dispatch({ type: DISPATCH.UP_COMING, payload: data })
 				} else if (uri.match(/movie\/popular/)) {
-					dispatch({ type: 'POPULAR', payload: data })
+					dispatch({ type: DISPATCH.POPULAR, payload: data })
 				} else if (uri.match(/airing_today/)) {
-					dispatch({ type: 'AIRINGTODAY', payload: data })
+					dispatch({ type: DISPATCH.AIRING_TODAY, payload: data })
 				} else if (uri.match(/on_the_air/)) {
-					dispatch({ type: 'ONTHEAIR', payload: data })
+					dispatch({ type: DISPATCH.ON_THE_AIR, payload: data })
 				} else if (uri.match(/tv\/popular/)) {
-					dispatch({ type: 'POPULARTV', payload: data })
+					dispatch({ type: DISPATCH.POPULAR_TV, payload: data })
 				} else if (uri.match(/tv\/top_rated/)) {
-					dispatch({ type: 'TOPRATEDTV', payload: data })
+					dispatch({ type: DISPATCH.TOPRATED_TV, payload: data })
 				} else if (uri.match(/person/)) {
-					dispatch({ type: 'POPULARPEOPLE', payload: data })
+					dispatch({ type: DISPATCH.POPULAR_PEOPLE, payload: data })
 				} else if(uri.match(/discover/)){
 					dispatch({type:'DISCOVER',payload:data})
 				}

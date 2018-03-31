@@ -14,7 +14,7 @@ import Image from 'react-native-image-progress'
 import * as myActions from '../../Actions/Actions'
 import Icon from 'react-native-vector-icons/FontAwesome'
 const { width, height } = Dimensions.get('window')
-import { IMAGE_PATH } from "../constant/const"
+import { IMAGE_PATH,COLORS } from "../constant/"
 class PersonInfo extends Component {
 	constructor(props) {
 		super(props)
@@ -47,7 +47,7 @@ class PersonInfo extends Component {
 			)
 		} else {
 			return (
-				<View style={{ flex: 1, backgroundColor: '#fff' }}>
+				<View style={{ flex: 1, backgroundColor: COLORS.WHITE }}>
 					{this.props.persondata ?
 						<ScrollView>
 							<Text style={{ color: 'black', padding: 10, fontSize: 15, marginLeft: width * 0.01 }} numberOfLines={4}>{this.props.persondata.biography}</Text>

@@ -11,11 +11,7 @@ import {
 	ActivityIndicator,
 	TouchableOpacity
 } from 'react-native'
-import pop from '../../images/pop.jpeg'
-import icon from '../../images/tmdb.png'
-import imdb from '../../images/imdb.png'
-import apple from '../../images/apple.jpeg'
-import YOUTUBE_PATH from '../constant/const'
+import { YOUTUBE_PATH, COLORS, IMAGES } from '../constant/'
 import Icon from 'react-native-vector-icons/FontAwesome'
 const { width, height } = Dimensions.get('window')
 export default class Info extends Component {
@@ -29,7 +25,7 @@ export default class Info extends Component {
 	render() {
     	return (
 			<ScrollView>
-				<View style={{ flex: 1, padding: 10, backgroundColor: '#fff' }}>
+				<View style={{ flex: 1, padding: 10, backgroundColor: COLORS.WHITE }}>
 					<View style={{ flex: 0.3, flexDirection: 'row', padding: 10 }}>
 						<TouchableOpacity
 							style={{
@@ -56,7 +52,7 @@ export default class Info extends Component {
 							}}
 						>
 							<View>
-								<Image source={icon} style={{ width: 50, height: 50 }} />
+								<Image source={IMAGES.TMDB} style={{ width: 50, height: 50 }} />
 							</View>
 							<View>
 								<Text>{this.props.info.vote_average}</Text>
@@ -71,7 +67,7 @@ export default class Info extends Component {
 							}}
 						>
 							<View>
-								<Image source={imdb} style={{ width: 50, height: 50 }} />
+								<Image source={IMAGES.IMDB} style={{ width: 50, height: 50 }} />
 							</View>
 							<View>
 								<Text>7.8</Text>
@@ -86,7 +82,7 @@ export default class Info extends Component {
 							}}
 						>
 							<View>
-								<Image source={apple} style={{ width: 50, height: 50 }} />
+								<Image source={IMAGES.APPLE} style={{ width: 50, height: 50 }} />
 							</View>
 							<View>
 								<Text>97%</Text>
@@ -100,7 +96,7 @@ export default class Info extends Component {
 								alignItems: 'center'
 							}}
 						>
-							<Image source={pop} style={{ width: 50, height: 50 }} />
+							<Image source={IMAGES.POP} style={{ width: 50, height: 50 }} />
 							<View>
 								<Text>79%</Text>
 							</View>
@@ -231,7 +227,7 @@ export default class Info extends Component {
 								animating={true}
 								style={{ height: 120, marginTop: height * 0.3 }}
 								size="large"
-								color="#76d46e"
+								color={ COLORS.ACTIVE_TAB_UNDERLINE }
 							/>
 						)}
 					</View>

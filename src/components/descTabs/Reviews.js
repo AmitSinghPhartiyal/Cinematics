@@ -6,6 +6,7 @@ import {
 	TouchableOpacity
 } from 'react-native'
 import { connect } from 'react-redux'
+import { COLORS } from '../constant/'
 import { bindActionCreators } from 'redux'
 import * as myActions from '../../Actions/Actions'
 class Reviews extends Component {
@@ -15,7 +16,7 @@ class Reviews extends Component {
 	render(){
 		if(this.props.review){
 			return(
-				<View style ={{ backgroundColor:'#fff'}}>
+				<View style ={{ backgroundColor:COLORS.WHITE}}>
 					<FlatList
 						data={ this.props.review }
 						numColumns={1}

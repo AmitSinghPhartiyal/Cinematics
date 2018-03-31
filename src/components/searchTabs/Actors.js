@@ -8,12 +8,10 @@ import {
 	ActivityIndicator,
 	TouchableOpacity
 } from 'react-native'
-import icon from '../../images/tmdb.png'
 import Image from 'react-native-image-progress'
 import { Actions } from 'react-native-router-flux'
-import CommonComponent from '../tabs/CommonComponent'
 import Icon from 'react-native-vector-icons/FontAwesome'  
-import { IMAGE_PATH } from "../constant/const"
+import { IMAGE_PATH, COLORS } from "../constant/"
 const {width, height} = Dimensions.get('window')
 export default class Actors extends Component {
 	constructor(props){
@@ -24,7 +22,7 @@ export default class Actors extends Component {
 	}
 	render(){
 		return(
-			<View style ={{ flex:1,backgroundColor:'#fff'}}>
+			<View style ={{ flex:1,backgroundColor:COLORS.WHITE}}>
 				<FlatList
 					refresh = {true}
 					data={ this.props.data}

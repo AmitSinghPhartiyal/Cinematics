@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
-import Home from './components/Home';
-import Search from './components/Search';
-import Tvshows from './components/Tvshows';
-import Discover from './components/Discover';
+import Movies from './components/pages/Movies';
+import Search from './components/pages/Search';
+import Tvshows from './components/pages/Tvshows';
+import Discover from './components/pages/Discover';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as myActions from './Actions/Actions';
-import PopularPeople from './components/PopularPeople';
-import SidebarComponent from './components/SidebarComponent';
-import SidebarFilter from './components/SidebarFilter';
-import MovieDescription from './components/MovieDescription';
-import PeopleDescription from './components/PeopleDescription';
-import MoviePeopleDesc from './components/MoviePeopleDesc';
+import PopularPeople from './components/pages/PopularPeople';
+import SidebarComponent from './components/common/SidebarComponent';
+import SidebarFilter from './components/common/SidebarFilter';
+import MovieDescription from './components/pages/MovieDescription';
+import PeopleDescription from './components/pages/PeopleDescription';
+import MoviePeopleDesc from './components/pages/MoviePeopleDesc';
 import { Router, Scene, Stack, Drawer } from 'react-native-router-flux';
 class RouterComponent extends Component {
 	constructor(props) {
@@ -41,9 +41,9 @@ class RouterComponent extends Component {
 						title="Cinematics"
 					>
 						<Scene
-							key="Home"
-							component={Home}
-							title="Home"
+							key="Movies"
+							component={Movies}
+							title="Movies"
 							hideNavBar={true}
 							initial
 						/>

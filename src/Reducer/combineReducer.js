@@ -4,10 +4,13 @@ import { personReducer } from './personReducer'
 import { searchReducer } from './searchReducer'
 import { drawerReducer } from './drawerReducer'
 import { filterReducer } from './filterReducer'
+import { tvReducer } from './tvReducer'
 export const rootReducer = combineReducers({
 	movieReducer,
 	searchReducer,
 	personReducer,
 	drawerReducer,
-	filterReducer
+	filterReducer,
+	tvReducer,
+
 })

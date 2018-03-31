@@ -12,7 +12,7 @@ import Image from 'react-native-image-progress'
 import * as myActions from '../../Actions/Actions'
 import { Actions } from 'react-native-router-flux'
 import Icon from 'react-native-vector-icons/FontAwesome'  
-import { IMAGE_PATH } from "../constant/const"
+import { IMAGE_PATH, COLORS } from "../constant/"
  class Cast extends Component {
 	constructor(props){
 		super(props)
@@ -35,7 +35,7 @@ import { IMAGE_PATH } from "../constant/const"
     }
 	render(){
 			return(
-				<View style ={{ flex:1,backgroundColor:'#fff'}}>
+				<View style ={{ flex:1,backgroundColor:COLORS.WHITE}}>
 					<FlatList
 						refresh = {true}
 						data={ this.props.cast}

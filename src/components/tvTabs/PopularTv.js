@@ -10,12 +10,12 @@ import {
   ActivityIndicator
 } from 'react-native'
 import { Actions } from 'react-native-router-flux'
+import { COLORS } from '../constant/'
 import Icon from 'react-native-vector-icons/FontAwesome' 
 import * as myActions from '../../Actions/Actions';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import icon from '../../images/tmdb.png';
-import CommonComponent from '../tabs/CommonComponent'
+import CommonComponent from "../common/CommonComponent";
 const {width, height} = Dimensions.get('window')
 class PopularTv extends Component{
 	  constructor(props){
@@ -38,7 +38,7 @@ class PopularTv extends Component{
 		 			animating={true}
 		 			style={{height:120,marginTop:height*0.3 }}
 		 			size='large'
-		 			color='#76d46e'
+		 			color={ COLORS.ACTIVE_TAB_UNDERLINE }
 		 		/>
 		 	)
 		}else{
@@ -50,9 +50,9 @@ class PopularTv extends Component{
 }
 mapStateToProps=(state,props)=>{
 	return{
-		list:state.movieReducer.populartvdata,
-		loading:state.movieReducer.loading,
-		isGrid:state.movieReducer.isGrid,
+		list:state.tvReducer.populartvdata,
+		loading:state.tvReducer.loading,
+		isGrid:state.tvReducer.isGrid,
 	}
 }
 mapDispatchToProps=(dispatch)=>{
