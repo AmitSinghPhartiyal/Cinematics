@@ -15,9 +15,9 @@ import {
 	MenuOption,
 	MenuTrigger,
   } from 'react-native-popup-menu'
-import PersonInfo from '../peopleTabs/PersonInfo'
-import Movies from '../peopleTabs/Movies'
-import TvShows from '../peopleTabs/TvShows'
+import PersonInfo from '../tabs/peopleTabs/PersonInfo'
+import Movies from '../tabs/peopleTabs/Movies'
+import TvShows from '../tabs/peopleTabs/TvShows'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as myActions from '../../Actions/Actions'

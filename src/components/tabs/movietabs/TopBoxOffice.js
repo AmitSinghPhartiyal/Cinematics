@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import {
   View,
   Text,
+  Image,
   FlatList,
   StyleSheet,
   Dimensions,
@@ -10,12 +11,13 @@ import {
 } from "react-native";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import CommonComponent from "../common/CommonComponent";
+import { COLORS } from '../../constant/'
+import CommonComponent from "../../common/CommonComponent";
+import * as myActions from "../../../Actions/Actions";
 import { Actions } from "react-native-router-flux";
-import * as myActions from "../../Actions/Actions";
-import { COLORS } from '../constant/'
+import Icon from "react-native-vector-icons/FontAwesome";
 const { width, height } = Dimensions.get("window");
-class NowPlaying extends Component {
+class TopBoxOffice extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -25,11 +27,14 @@ class NowPlaying extends Component {
   }
   componentDidMount() {
     this.props.fetchData(
-      "https://api.themoviedb.org/3/movie/now_playing?api_key=55032e2af54d05c1326b26b0bf830b60"
+      "https://api.themoviedb.org/3/movie/top_rated?api_key=55032e2af54d05c1326b26b0bf830b60"
     );
   }
   componentWillReceiveProps = nextProps => {
     this.setState({ list: nextProps.list });
+  };
+  getDetails = item => {
+    this.props.setCurrentItem(item);
   };
   render() {
     if (this.props.loading) {
@@ -50,12 +55,12 @@ class NowPlaying extends Component {
 }
 mapStateToProps = (state, props) => {
   return {
-    list: state.movieReducer.nowdata,
+    list: state.movieReducer.topdata,
     loading: state.movieReducer.loading,
     isGrid: state.movieReducer.isGrid
   };
 };
 mapDispatchToProps = dispatch => {
-  return bindActionCreators(myActions, dispatch); //Dispatch action not connect to the store
+  return bindActionCreators(myActions, dispatch);
 };
-export default connect(mapStateToProps, mapDispatchToProps)(NowPlaying);
+export default connect(mapStateToProps, mapDispatchToProps)(TopBoxOffice);

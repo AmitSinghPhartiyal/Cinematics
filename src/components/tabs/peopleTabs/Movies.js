@@ -11,7 +11,7 @@ import {
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import Image from 'react-native-image-progress'
-import * as myActions from '../../Actions/Actions'
+import * as myActions from '../../../Actions/Actions'
 import Icon from 'react-native-vector-icons/FontAwesome'
 const { width, height } = Dimensions.get('window')
 class Movies extends Component {

@@ -6,18 +6,18 @@ import {
 	FlatList,
 	StyleSheet,
 	Dimensions,
-  TouchableOpacity,
-  ActivityIndicator
+  	TouchableOpacity,
+  	ActivityIndicator
 } from 'react-native'
 import { Actions } from 'react-native-router-flux'
-import { COLORS } from '../constant/'
-import Icon from 'react-native-vector-icons/FontAwesome' 
-import * as myActions from '../../Actions/Actions';
+import Icon from 'react-native-vector-icons/FontAwesome'
+import * as myActions from '../../../Actions/Actions';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import CommonComponent from "../common/CommonComponent";
+import CommonComponent from "../../common/CommonComponent";
+import { COLORS } from '../../constant';
 const {width, height} = Dimensions.get('window')
-class PopularTv extends Component{
+class TopRatedTv extends Component{
 	  constructor(props){
     super(props); 
       this.state = {
@@ -25,12 +25,12 @@ class PopularTv extends Component{
         loading:true,
     }
   }
-	componentDidMount(){
-		this.props.fetchData('https://api.themoviedb.org/3/tv/popular?api_key=55032e2af54d05c1326b26b0bf830b60');
-	}
-	componentWillReceiveProps = (nextProps)=>{
-		this.setState({list:nextProps.list})	
-	}
+componentDidMount(){
+	this.props.fetchData('https://api.themoviedb.org/3/tv/top_rated?api_key=55032e2af54d05c1326b26b0bf830b60');
+}
+componentWillReceiveProps=(nextProps)=>{
+	this.setState({list:nextProps.list})	
+}
 	render(){
 		if(this.props.loading){
 		 	return(
@@ -50,7 +50,7 @@ class PopularTv extends Component{
 }
 mapStateToProps=(state,props)=>{
 	return{
-		list:state.tvReducer.populartvdata,
+		list:state.tvReducer.topratedtvdata,
 		loading:state.tvReducer.loading,
 		isGrid:state.tvReducer.isGrid,
 	}
@@ -59,4 +59,4 @@ mapDispatchToProps=(dispatch)=>{
 	return bindActionCreators(myActions,dispatch)//Dispatch action not connect to the store
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(PopularTv);
+export default connect(mapStateToProps,mapDispatchToProps)(TopRatedTv);

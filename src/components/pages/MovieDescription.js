@@ -13,10 +13,10 @@ import {
   TouchableOpacity
 } from "react-native";
 
-import Info from "../descTabs/Info";
-import Cast from "../descTabs/Cast";
+import Info from "../tabs/descTabs/Info";
+import Cast from "../tabs/descTabs/Cast";
 import { connect } from "react-redux";
-import Reviews from "../descTabs/Reviews";
+import Reviews from "../tabs/descTabs/Reviews";
 import { bindActionCreators } from "redux";
 import * as myActions from "../../Actions/Actions";
 import Image from "react-native-image-progress";

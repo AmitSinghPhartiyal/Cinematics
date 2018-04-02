@@ -9,10 +9,10 @@ import {
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import Image from 'react-native-image-progress'
-import * as myActions from '../../Actions/Actions'
+import * as myActions from '../../../Actions/Actions'
 import { Actions } from 'react-native-router-flux'
 import Icon from 'react-native-vector-icons/FontAwesome'  
-import { IMAGE_PATH, COLORS } from "../constant/"
+import { IMAGE_PATH, COLORS } from "../../constant/"
  class Cast extends Component {
 	constructor(props){
 		super(props)

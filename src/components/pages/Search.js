@@ -11,9 +11,9 @@ import _ from "lodash";
 
 import { COLORS } from "../constant/index";
 import { connect } from "react-redux";
-import Actors from "../searchTabs/Actors";
-import Movies from "../searchTabs/Movies";
-import TvShows from "../searchTabs/TvShows";
+import Actors from "../tabs/searchTabs/Actors";
+import Movies from "../tabs/searchTabs/Movies";
+import TvShows from "../tabs/searchTabs/TvShows";
 import { bindActionCreators } from "redux";
 import * as myActions from "../../Actions/Actions";
 import { Actions } from "react-native-router-flux";

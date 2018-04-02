@@ -6,9 +6,9 @@ import {
 	TouchableOpacity
 } from 'react-native'
 import { connect } from 'react-redux'
-import { COLORS } from '../constant/'
+import { COLORS } from '../../constant/'
 import { bindActionCreators } from 'redux'
-import * as myActions from '../../Actions/Actions'
+import * as myActions from '../../../Actions/Actions'
 class Reviews extends Component {
 	constructor(props){
 		super(props)

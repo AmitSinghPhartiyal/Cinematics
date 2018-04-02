@@ -11,9 +11,9 @@ import {
 } from 'react-native'
 import { Actions } from 'react-native-router-flux'
 import Icon from 'react-native-vector-icons/FontAwesome'
-import * as myActions from '../../Actions/Actions'
-import { COLORS } from '../constant/'
-import CommonComponent from "../common/CommonComponent";
+import * as myActions from '../../../Actions/Actions'
+import { COLORS } from '../../constant/'
+import CommonComponent from "../../common/CommonComponent";
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 const {width, height} = Dimensions.get('window')

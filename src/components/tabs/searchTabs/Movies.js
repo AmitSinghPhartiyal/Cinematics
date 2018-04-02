@@ -11,7 +11,7 @@ import {
 import Image from 'react-native-image-progress'
 import { Actions } from 'react-native-router-flux'
 import Icon from 'react-native-vector-icons/FontAwesome'  
-import { IMAGE_PATH, COLORS } from '../constant/'
+import { IMAGE_PATH, COLORS } from '../../constant/'
 const {width, height} = Dimensions.get('window')
 export default class Movie extends Component {
 	constructor(props){

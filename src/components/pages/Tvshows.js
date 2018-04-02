@@ -11,10 +11,10 @@ import {
 } from 'react-native'
 import Header from '../common/Header'
 import { COLORS } from '../constant/'
-import OnTheAir from '../tvTabs/OnTheAir'
-import PopularTv from '../tvTabs/PopularTv'
-import TopRatedTv from '../tvTabs/TopRatedTv'
-import AiringToday from '../tvTabs/AiringToday'
+import OnTheAir from '../tabs/tvTabs/OnTheAir'
+import PopularTv from '../tabs/tvTabs/PopularTv'
+import TopRatedTv from '../tabs/tvTabs/TopRatedTv'
+import AiringToday from '../tabs/tvTabs/AiringToday'
 import ScrollableTabView,{ScrollableTabBar} from 'react-native-scrollable-tab-view'
 export default class Tvshows extends Component{
 	render(){

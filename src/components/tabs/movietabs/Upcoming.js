@@ -10,10 +10,10 @@ import {
   ActivityIndicator
 } from "react-native";
 import { connect } from "react-redux";
-import { COLORS } from '../constant/'
+import { COLORS } from '../../constant/'
 import { bindActionCreators } from "redux";
-import CommonComponent from "../common/CommonComponent";
-import * as myActions from "../../Actions/Actions";
+import CommonComponent from "../../common/CommonComponent";
+import * as myActions from "../../../Actions/Actions";
 import { Actions } from "react-native-router-flux";
 import Icon from "react-native-vector-icons/FontAwesome";
 const { width, height } = Dimensions.get("window");

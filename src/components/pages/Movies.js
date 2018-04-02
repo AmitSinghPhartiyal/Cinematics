@@ -9,10 +9,10 @@ import {
   TouchableOpacity,
   ActivityIndicator
 } from "react-native";
-import NowPlaying from "../movietabs/NowPlaying";
-import Popular from "../movietabs/Popular";
-import TopBoxOffice from "../movietabs/TopBoxOffice";
-import Upcoming from "../movietabs/Upcoming";
+import NowPlaying from "../tabs/movietabs/NowPlaying";
+import Popular from "../tabs/movietabs/Popular";
+import TopBoxOffice from "../tabs/movietabs/TopBoxOffice";
+import Upcoming from "../tabs/movietabs/Upcoming";
 import { COLORS } from "../constant/";
 import ScrollableTabView, {
   ScrollableTabBar

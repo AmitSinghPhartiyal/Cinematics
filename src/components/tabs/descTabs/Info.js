@@ -11,7 +11,7 @@ import {
 	ActivityIndicator,
 	TouchableOpacity
 } from 'react-native'
-import { YOUTUBE_PATH, COLORS, IMAGES } from '../constant/'
+import { YOUTUBE_PATH, COLORS, IMAGES } from '../../constant/'
 import Icon from 'react-native-vector-icons/FontAwesome'
 const { width, height } = Dimensions.get('window')
 export default class Info extends Component {
