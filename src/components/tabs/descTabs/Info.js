@@ -13,6 +13,7 @@ import {
 } from 'react-native'
 import { YOUTUBE_PATH, COLORS, IMAGES } from '../../constant/'
 import Icon from 'react-native-vector-icons/FontAwesome'
+import VideoPlayer from 'react-native-native-video-player';
 const { width, height } = Dimensions.get('window')
 export default class Info extends Component {
 	constructor(props) {
@@ -20,7 +21,7 @@ export default class Info extends Component {
   	}
 	playVideo(e) {
 		let uri = YOUTUBE_PATH + e.key
-    	Linking.openURL(uri)
+    	VideoPlayer.showVideoPlayer(uri);
   	}
 	render() {
     	return (

@@ -1,7 +1,6 @@
 import { DISPATCH } from '../components/constant/'
 let defaultState = { loading: true, data: [], placeholderText:'Search movie' }
 export const movieReducer = (state = defaultState, action) => {
-	console.log("REDUCER",action);
 	switch (action.type) {
 	case DISPATCH.NOW_PLAYING:
 		return {

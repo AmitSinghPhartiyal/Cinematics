@@ -19,11 +19,6 @@ export const filterReducer = (state = defaultState, action) => {
 			...state,
 			genres: action.payload
 		}
-	case 'ERROR':
-		return {
-			...state,
-			data: action.payload
-		}
 	case 'DISCOVER':
 		return {
 			...state,

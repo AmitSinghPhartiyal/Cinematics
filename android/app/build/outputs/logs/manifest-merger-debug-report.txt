@@ -65,6 +65,7 @@ ADDED from /Users/amit.singh/Desktop/reactNative/Cinematics/android/app/src/main
 		ADDED from /Users/amit.singh/Desktop/reactNative/Cinematics/android/app/src/main/AndroidManifest.xml:23:17-81
 uses-sdk
 INJECTED from /Users/amit.singh/Desktop/reactNative/Cinematics/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [cinematics:react-native-native-video-player:unspecified] /Users/amit.singh/Desktop/reactNative/Cinematics/android/app/build/intermediates/exploded-aar/cinematics/react-native-native-video-player/unspecified/AndroidManifest.xml:7:5-9:41
 MERGED from [cinematics:react-native-vector-icons:unspecified] /Users/amit.singh/Desktop/reactNative/Cinematics/android/app/build/intermediates/exploded-aar/cinematics/react-native-vector-icons/unspecified/AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.react:react-native:0.54.1] /Users/amit.singh/Desktop/reactNative/Cinematics/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.54.1/AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/amit.singh/Desktop/reactNative/Cinematics/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/AndroidManifest.xml:20:5-43

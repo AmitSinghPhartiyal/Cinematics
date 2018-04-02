@@ -17,7 +17,7 @@ import {
 import { Actions } from "react-native-router-flux";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import * as myActions from "../../Actions/Actions";
+import * as myActions from "../../Actions/discover";
 const { width, height } = Dimensions.get("window");
 import { IMDBICON,METHOD,COLORS } from "../constant/";
 class SidebarFilter extends Component {

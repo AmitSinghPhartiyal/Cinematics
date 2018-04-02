@@ -15,16 +15,18 @@ import {
 } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 const { width, height } = Dimensions.get('window')
-import { IMDBICON,COLORS } from '../constant/';
+import { IMAGES,COLORS } from '../constant/';
 export default class SidebarComponent extends Component {
+	
 	render() {
+		console.log("This is a iamge",IMAGES.IMDB_ICON)
 		return (
 			<View style={styles.sidemenumaindiv}>
 				<ScrollView>
 					<View style={styles.drawer}>
 						<View style={styles.drawerHeader}>
 							<View style={styles.tmdbImgView}>
-								<Image source={IMDBICON} style={styles.tmdbImage} />
+								<Image source={ IMAGES.IMDB_ICON } style={styles.tmdbImage} />
 							</View>
 							<View style={styles.tmdbTitleView}>
 								<Text style={{ color: COLORS.WHITE }}>Connect to TMDb</Text>

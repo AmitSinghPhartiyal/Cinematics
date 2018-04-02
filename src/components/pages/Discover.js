@@ -33,7 +33,6 @@ class Discover extends Component {
     );
   }
     discover(){
-      console.log("Discver state",this.state);
       this.props.fetchData("https://api.themoviedb.org/3/discover/movie?api_key=55032e2af54d05c1326b26b0bf830b60&sort_by=" + this.state.selectedItem);
     }
 
@@ -56,7 +55,6 @@ class Discover extends Component {
   };
   componentWillReceiveProps(nextProps) {
     this.setState({ changeSidebar: nextProps.changeSidebar });
-    console.log("Next prop",nextProps);
     // if (this.props.discover != nextProps.discover) {
     //   this.setState({
     //     discover: nextProps.discover,
@@ -65,7 +63,6 @@ class Discover extends Component {
     // }
   }
   render() {
-    console.log("Discovery data", this.state);
     return (
       <View style={{ flex: 1, backgroundColor: "#fff" }}>
         <View style={{ flex: 1, flexDirection: "column" }}>
@@ -260,7 +257,7 @@ class Discover extends Component {
   }
 }
 mapStateToProps = (state, props) => {
-  console.log("STATE",state);
+
   return {
     list: state.filterReducer.data,
     loading: state.movieReducer.loading,

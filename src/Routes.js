@@ -26,7 +26,6 @@ class RouterComponent extends Component {
 		this.setState({ sidebarPosition: nextProps.sidebarPosition })
 	}
 	render() {
-		console.log('Routes props', this.props)
 		return (
 			<Router>
 				<Stack key="root">

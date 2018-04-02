@@ -1,7 +1,4 @@
 
-export const IMDB_ICON = '../images/tmdb.png'
-export const IMAGE_PATH = 'https://image.tmdb.org/t/p/w500/'
-export const YOUTUBE_PATH = 'https://www.youtube.com/watch?v='
 export const METHOD = {
 	generateImages: src => {
 		imageSource = []
@@ -38,7 +35,6 @@ export const METHOD = {
 		return data
 	}
 }
-
 export const COLORS = {
 	PRIMARY:'#333',
 	WHITE:'#fff',
@@ -77,4 +73,7 @@ export const IMAGES = {
 	NO_IMAGE:'noImage.svg',
 	POP:'pop.jpeg',
 	TMDB:'tmdb.png',
+	IMDB_ICON :'../images/tmdb.png',
+	IMAGE_PATH: 'https://image.tmdb.org/t/p/w500/',
+	YOUTUBE_PATH:  'https://www.youtube.com/watch?v=',
 }

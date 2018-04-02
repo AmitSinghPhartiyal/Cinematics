@@ -39,7 +39,6 @@ class PeopleDescription extends Component{
 		this.setState({peopleDetail:nextProps.peopleDetail})
 	}	
 	render(){
-		console.log("Parent props",this.porps)
  		if (this.props.loading) {
       	return (
 			<View style={styles.ActivityIndicatorContainer}>
@@ -59,7 +58,7 @@ class PeopleDescription extends Component{
 							<TouchableOpacity style = {{flex:0.8}} onPress = {() => Actions.PopularPeople()}>
 								<Icon name = "arrow-left" style={{color:COLORS.WHITE,fontSize:25}}/>
 							</TouchableOpacity>
-							<TouchableOpacity style = {{flex:0.15,justifyContent:'center',alignItems:'center'}} onPress = {() => Actions.Home()}>
+							<TouchableOpacity style = {{flex:0.15,justifyContent:'center',alignItems:'center'}} onPress = {() => Actions.movies()}>
 								<Icon name = "home" style={{color:COLORS.WHITE,fontSize:25}}/>
 							</TouchableOpacity>
 							<TouchableOpacity style = {{flex:0.1,justifyContent:'center',alignItems:'center'}}>

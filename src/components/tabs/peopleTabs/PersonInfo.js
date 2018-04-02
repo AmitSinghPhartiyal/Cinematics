@@ -11,7 +11,7 @@ import {
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import Image from 'react-native-image-progress'
-import * as myActions from '../../../Actions/Actions'
+import * as myActions from '../../../Actions/person'
 import Icon from 'react-native-vector-icons/FontAwesome'
 const { width, height } = Dimensions.get('window')
 import { IMAGE_PATH,COLORS } from "../../constant/"
@@ -33,7 +33,6 @@ class PersonInfo extends Component {
 		this.setState({ personImage: nextProps.peopleImage })
 	}
 	render() {
-		console.log("Perosn INfo", this.props)
 		if (this.props.loading) {
 			return (
 				<View style={styles.ActivityIndicatorContainer}>

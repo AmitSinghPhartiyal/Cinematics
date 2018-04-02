@@ -3,6 +3,7 @@ package com.cinematics;
 import android.app.Application;
 //import cl.json.RNSharePackage; 
 import com.facebook.react.ReactApplication;
+import com.wog.videoplayer.VideoPlayerPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.facebook.react.ReactNativeHost;
@@ -25,6 +26,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new VideoPlayerPackage(),
           new VectorIconsPackage()
          // new RNSharePackage()
       );

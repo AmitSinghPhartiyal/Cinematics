@@ -18,17 +18,17 @@ import Cast from "../tabs/descTabs/Cast";
 import { connect } from "react-redux";
 import Reviews from "../tabs/descTabs/Reviews";
 import { bindActionCreators } from "redux";
-import * as myActions from "../../Actions/Actions";
+import * as myActions from "../../Actions/movieDetail";
 import Image from "react-native-image-progress";
 import { Actions } from "react-native-router-flux";
 import PopUpComponent from "../common/PopUpComponent";
 import ShareComponent from "../common/ShareComponent";
 import Icon from "react-native-vector-icons/FontAwesome";
+import { IMAGE_PATH, COLORS } from "../constant/";
 import ScrollableTabView, {
   ScrollableTabBar
 } from "react-native-scrollable-tab-view";
 const { width, height } = Dimensions.get("window");
-import { IMAGE_PATH, COLORS } from "../constant/";
 class MovieDescription extends Component {
   constructor(props) {
     super(props);
@@ -59,7 +59,6 @@ class MovieDescription extends Component {
     this.props.getMoviesTrailors(this.props.movie.id);
   };
   render() {
-    console.log("Movie props", this.props);
     if (this.props.loading) {
       return (
         <View style={styles.ActivityIndicatorContainer}>
@@ -89,7 +88,7 @@ class MovieDescription extends Component {
             >
               <TouchableOpacity
                 style={{ flex: 0.6 }}
-                onPress={() => Actions.Home()}
+                onPress={() => Actions.Movies()}
               >
                 <Icon
                   name="arrow-left"
@@ -102,7 +101,7 @@ class MovieDescription extends Component {
                   justifyContent: "center",
                   alignItems: "center"
                 }}
-                onPress={() => Actions.Home()}
+                onPress={() => Actions.Movies()}
               >
                 <Icon
                   name="home"

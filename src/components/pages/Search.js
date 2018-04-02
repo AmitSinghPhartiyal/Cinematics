@@ -15,7 +15,7 @@ import Actors from "../tabs/searchTabs/Actors";
 import Movies from "../tabs/searchTabs/Movies";
 import TvShows from "../tabs/searchTabs/TvShows";
 import { bindActionCreators } from "redux";
-import * as myActions from "../../Actions/Actions";
+import * as myActions from "../../Actions/search";
 import { Actions } from "react-native-router-flux";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
@@ -70,7 +70,7 @@ class Search extends Component {
           <TouchableOpacity
             style={styles.backView}
             onPress={() => {
-              Actions.Home();
+              Actions.Movies();
             }}
           >
             <Icon name="arrow-left" style={styles.backIcon} />
